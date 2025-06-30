@@ -1,10 +1,8 @@
 import React from "react";
-import Link from "next/link";
-import { Flex, Group, Select, Button } from "@mantine/core";
+import { Flex, Group, Select } from "@mantine/core";
 import styled from "styled-components";
 import toast from "react-hot-toast";
 import { AiOutlineFullscreen } from "react-icons/ai";
-import { FaFireFlameCurved, FaGithub } from "react-icons/fa6";
 import { type FileFormat, formats } from "../../../enums/file.enum";
 import { JSONCrackLogo } from "../../../layout/JsonCrackLogo";
 import useFile from "../../../store/useFile";
@@ -70,27 +68,6 @@ export const Toolbar = () => {
         <ToolsMenu />
       </Group>
       <Group gap="xs" justify="right" w="100%" style={{ flexWrap: "nowrap" }}>
-        <Button
-          component={Link}
-          href="https://todiagram.com/editor?utm_source=jsoncrack&utm_medium=toolbar"
-          target="_blank"
-          rel="noopener"
-          autoContrast
-          color="green"
-          variant="outline"
-          c="bright"
-          size="compact-sm"
-          fz="12"
-          fw="600"
-          leftSection={<FaFireFlameCurved />}
-        >
-          NEW! JSON Crack v2.0
-        </Button>
-        <Link href="https://github.com/AykutSarac/jsoncrack.com" rel="noopener" target="_blank">
-          <StyledToolElement title="GitHub">
-            <FaGithub size="18" />
-          </StyledToolElement>
-        </Link>
         <StyledToolElement title="Fullscreen" onClick={fullscreenBrowser}>
           <AiOutlineFullscreen size="18" />
         </StyledToolElement>

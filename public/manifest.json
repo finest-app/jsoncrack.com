@@ -6,8 +6,8 @@
   "background_color": "#36393e",
   "display": "standalone",
   "orientation": "landscape",
-  "scope": "/editor",
-  "start_url": "/editor",
+  "scope": "/",
+  "start_url": "/",
   "icons": [
     {
       "src": "assets/192.png",
