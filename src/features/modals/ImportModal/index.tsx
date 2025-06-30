@@ -19,7 +19,7 @@ export const ImportModal = ({ opened, onClose }: ModalProps) => {
     if (url) {
       setFile(null);
 
-      toast.loading("Loading...", { id: "toastFetch" });
+      toast.loading("加载中...", { id: "toastFetch" });
       gaEvent("fetch_url");
 
       return fetch(url)
@@ -28,7 +28,7 @@ export const ImportModal = ({ opened, onClose }: ModalProps) => {
           setContents({ contents: JSON.stringify(json, null, 2) });
           onClose();
         })
-        .catch(() => toast.error("Failed to fetch JSON!"))
+        .catch(() => toast.error("获取 JSON 失败！"))
         .finally(() => toast.dismiss("toastFetch"));
     } else if (file) {
       const lastIndex = file.name.lastIndexOf(".");
@@ -48,7 +48,7 @@ export const ImportModal = ({ opened, onClose }: ModalProps) => {
 
   return (
     <Modal
-      title="Import File"
+      title="导入文件"
       opened={opened}
       onClose={() => {
         setFile(null);
@@ -62,13 +62,13 @@ export const ImportModal = ({ opened, onClose }: ModalProps) => {
           value={url}
           onChange={e => setURL(e.target.value)}
           type="url"
-          placeholder="URL of JSON to fetch"
+          placeholder="要获取的 JSON 的 URL"
           data-autofocus
         />
         <Paper radius="md" style={{ cursor: "pointer" }}>
           <Dropzone
             onDrop={files => setFile(files[0])}
-            onReject={files => toast.error(`Unable to load file ${files[0].file.name}`)}
+            onReject={files => toast.error(`无法加载文件 ${files[0].file.name}`)}
             maxSize={500 * 1024}
             maxFiles={1}
             p="md"
@@ -82,12 +82,12 @@ export const ImportModal = ({ opened, onClose }: ModalProps) => {
           >
             <Stack justify="center" align="center" gap="sm" mih={220}>
               <AiOutlineUpload size={48} />
-              <Text fw="bold">Drop here or click to upload files</Text>
+              <Text fw="bold">拖拽到此处或点击上传文件</Text>
               <Text c="dimmed" fz="xs">
-                (Max 500 KB)
+                (最大 500 KB)
               </Text>
               <Text c="dimmed" fz="sm">
-                {file?.name ?? "None"}
+                {file?.name ?? "无"}
               </Text>
             </Stack>
           </Dropzone>
@@ -95,7 +95,7 @@ export const ImportModal = ({ opened, onClose }: ModalProps) => {
       </Stack>
       <Group justify="right">
         <Button onClick={handleImportFile} disabled={!(file || url)}>
-          Import
+          导入
         </Button>
       </Group>
     </Modal>

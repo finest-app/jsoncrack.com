@@ -40,7 +40,7 @@ export const ToolsMenu = () => {
       gaEvent("randomize_data");
     } catch (error) {
       console.error(error);
-      toast.error("Failed to generate mock data");
+      toast.error("生成模拟数据失败");
     }
   };
 
@@ -49,7 +49,7 @@ export const ToolsMenu = () => {
       <Menu.Target>
         <StyledToolElement onClick={() => gaEvent("show_tools_menu")}>
           <Flex align="center" gap={3}>
-            Tools <CgChevronDown />
+            工具 <CgChevronDown />
           </Flex>
         </StyledToolElement>
       </Menu.Target>
@@ -62,7 +62,7 @@ export const ToolsMenu = () => {
             gaEvent("open_jq_modal");
           }}
         >
-          JSON Query (jq)
+          JSON 查询 (jq)
         </Menu.Item>
         <Menu.Item
           fz={12}
@@ -72,7 +72,7 @@ export const ToolsMenu = () => {
             gaEvent("open_schema_modal");
           }}
         >
-          JSON Schema
+          JSON 架构
         </Menu.Item>
         <Menu.Item
           fz={12}
@@ -82,7 +82,7 @@ export const ToolsMenu = () => {
             gaEvent("open_json_path_modal");
           }}
         >
-          JSON Path
+          JSON 路径
         </Menu.Item>
         <Menu.Divider />
         <Menu.Item
@@ -93,7 +93,7 @@ export const ToolsMenu = () => {
             gaEvent("open_jwt_modal");
           }}
         >
-          Decode JWT
+          解码 JWT
         </Menu.Item>
         <Menu.Item
           fz={12}
@@ -103,10 +103,10 @@ export const ToolsMenu = () => {
             gaEvent("open_type_modal");
           }}
         >
-          Generate Type
+          生成类型
         </Menu.Item>
         <Menu.Item fz={12} leftSection={<FaRandom />} onClick={randomizeData}>
-          Randomize Data
+          随机化数据
         </Menu.Item>
       </Menu.Dropdown>
     </Menu>

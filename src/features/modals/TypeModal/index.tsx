@@ -90,7 +90,7 @@ export const TypeModal = ({ opened, onClose }: ModalProps) => {
   }, [getJson, opened, selectedType, transformer]);
 
   return (
-    <Modal title="Generate Types" size="lg" opened={opened} onClose={onClose} centered>
+    <Modal title="生成类型" size="lg" opened={opened} onClose={onClose} centered>
       <Stack pos="relative">
         <Select
           value={selectedType}
@@ -104,8 +104,8 @@ export const TypeModal = ({ opened, onClose }: ModalProps) => {
         <ScrollArea.Autosize mah={400} maw={700}>
           <CodeHighlight
             language={editorLanguage}
-            copyLabel="Copy to clipboard"
-            copiedLabel="Copied to clipboard"
+            copyLabel="复制到剪贴板"
+            copiedLabel="已复制到剪贴板"
             code={type}
             styles={{ root: { borderRadius: 6 } }}
           />

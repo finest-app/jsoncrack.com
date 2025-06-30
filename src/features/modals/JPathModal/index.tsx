@@ -27,12 +27,11 @@ export const JPathModal = ({ opened, onClose }: ModalProps) => {
   };
 
   return (
-    <Modal title="JSON Path" size="lg" opened={opened} onClose={onClose} centered>
+    <Modal title="JSON 路径" size="lg" opened={opened} onClose={onClose} centered>
       <Stack>
         <Text fz="sm">
-          JsonPath expressions always refer to a JSON structure in the same way as XPath expression
-          are used in combination with an XML document. The &quot;root member object&quot; in
-          JsonPath is always referred to as $ regardless if it is an object or array.
+          JsonPath 表达式总是以与 XPath 表达式结合 XML 文档相同的方式引用 JSON 结构。 JsonPath
+          中的“根成员对象”始终称为 $，无论它是对象还是数组。
           <br />
           <Anchor
             fz="sm"
@@ -40,18 +39,18 @@ export const JPathModal = ({ opened, onClose }: ModalProps) => {
             href="https://docs.oracle.com/cd/E60058_01/PDF/8.0.8.x/8.0.8.0.0/PMF_HTML/JsonPath_Expressions.htm"
             rel="noopener noreferrer"
           >
-            Read documentation. <VscLinkExternal />
+            阅读文档 <VscLinkExternal />
           </Anchor>
         </Text>
         <TextInput
           value={query}
           onChange={e => setQuery(e.currentTarget.value)}
-          placeholder="Enter JSON Path..."
+          placeholder="输入 JSON 路径..."
           data-autofocus
         />
         <Group justify="right">
           <Button onClick={evaluteJsonPath} disabled={!query.length}>
-            Run
+            运行
           </Button>
         </Group>
       </Stack>

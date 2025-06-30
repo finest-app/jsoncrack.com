@@ -68,7 +68,7 @@ export const Toolbar = () => {
         <ToolsMenu />
       </Group>
       <Group gap="xs" justify="right" w="100%" style={{ flexWrap: "nowrap" }}>
-        <StyledToolElement title="Fullscreen" onClick={fullscreenBrowser}>
+        <StyledToolElement title="全屏" onClick={fullscreenBrowser}>
           <AiOutlineFullscreen size="18" />
         </StyledToolElement>
       </Group>

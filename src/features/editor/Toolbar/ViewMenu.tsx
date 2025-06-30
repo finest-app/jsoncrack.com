@@ -21,7 +21,7 @@ export const ViewMenu = () => {
       <Menu.Target>
         <StyledToolElement onClick={() => gaEvent("show_view_menu")}>
           <Flex align="center" gap={3}>
-            View <CgChevronDown />
+            视图 <CgChevronDown />
           </Flex>
         </StyledToolElement>
       </Menu.Target>
@@ -36,8 +36,8 @@ export const ViewMenu = () => {
             gaEvent("change_view_mode", { label: e });
           }}
           data={[
-            { value: ViewMode.Graph, label: "Graph" },
-            { value: ViewMode.Tree, label: "Tree" },
+            { value: ViewMode.Graph, label: "图形" },
+            { value: ViewMode.Tree, label: "树形" },
           ]}
           fullWidth
           mb="4"
@@ -50,7 +50,7 @@ export const ViewMenu = () => {
             gaEvent("toggle_dark_mode", { label: darkmodeEnabled ? "on" : "off" });
           }}
         >
-          <Text size="xs">Dark Mode</Text>
+          <Text size="xs">深色模式</Text>
         </Menu.Item>
       </Menu.Dropdown>
     </Menu>

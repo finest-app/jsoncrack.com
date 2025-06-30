@@ -103,7 +103,7 @@ export const BottomBar = () => {
                 <Flex align="center" gap={2}>
                   <VscError color="red" />
                   <Text c="red" fw={500} fz="xs">
-                    Invalid
+                    无效
                   </Text>
                 </Flex>
               </Popover.Target>
@@ -114,7 +114,7 @@ export const BottomBar = () => {
           ) : (
             <Flex align="center" gap={2}>
               <VscCheck />
-              <Text size="xs">Valid</Text>
+              <Text size="xs">有效</Text>
             </Flex>
           )}
         </StyledBottomBarItem>
@@ -125,18 +125,18 @@ export const BottomBar = () => {
           }}
         >
           {liveTransformEnabled ? <VscSync /> : <VscSyncIgnored />}
-          <Text fz="xs">Live Transform</Text>
+          <Text fz="xs">实时转换</Text>
         </StyledBottomBarItem>
         {!liveTransformEnabled && (
           <StyledBottomBarItem onClick={() => setContents({})} disabled={!!error}>
             <VscRunAll />
-            Click to Transform
+            点击转换
           </StyledBottomBarItem>
         )}
       </StyledLeft>
 
       <StyledRight>
-        <StyledBottomBarItem>Nodes: {nodeCount}</StyledBottomBarItem>
+        <StyledBottomBarItem>节点数：{nodeCount}</StyledBottomBarItem>
       </StyledRight>
     </StyledBottomBar>
   );

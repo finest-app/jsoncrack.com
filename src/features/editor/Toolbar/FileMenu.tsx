@@ -25,19 +25,19 @@ export const FileMenu = () => {
   return (
     <Menu shadow="md" withArrow>
       <Menu.Target>
-        <StyledToolElement title="File">
+        <StyledToolElement title="文件">
           <Flex align="center" gap={3}>
-            File
+            文件
             <CgChevronDown />
           </Flex>
         </StyledToolElement>
       </Menu.Target>
       <Menu.Dropdown>
         <Menu.Item fz={12} onClick={() => setVisible("ImportModal", true)}>
-          Import
+          导入
         </Menu.Item>
         <Menu.Item fz={12} onClick={handleSave}>
-          Export
+          导出
         </Menu.Item>
       </Menu.Dropdown>
     </Menu>

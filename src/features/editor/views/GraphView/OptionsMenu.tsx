@@ -107,7 +107,7 @@ export const OptionsMenu = () => {
             onClick={() => setVisible("DownloadModal", true)}
           >
             <Flex fz="xs" justify="space-between" gap="md">
-              <Text fz="xs">Export as image</Text>
+              <Text fz="xs">导出为图像</Text>
               <Text ml="md" fz={10} c="dimmed">
                 {coreKey} + S
               </Text>
@@ -127,7 +127,7 @@ export const OptionsMenu = () => {
             }
             closeMenuOnClick={false}
           >
-            Rotate Layout
+            旋转布局
           </Menu.Item>
           <Menu.Item
             fz={12}
@@ -142,7 +142,7 @@ export const OptionsMenu = () => {
               </Text>
             }
           >
-            {graphCollapsed ? "Expand" : "Collapse"} Graph
+            {graphCollapsed ? "展开图" : "折叠图"}
           </Menu.Item>
           <Menu.Divider />
           <Menu position="right" trigger="hover" offset={0}>
@@ -156,7 +156,7 @@ export const OptionsMenu = () => {
                 rightSection={<LuChevronRight />}
                 styles={{ root: { paddingInline: 11 }, inner: { justifyContent: "space-between" } }}
               >
-                View Options
+                视图选项
               </Button>
             </Menu.Target>
             <Menu.Dropdown>
@@ -167,7 +167,7 @@ export const OptionsMenu = () => {
                   gaEvent("toggle_rulers", { label: rulersEnabled ? "on" : "off" });
                 }}
               >
-                <Text size="xs">Rulers</Text>
+                <Text size="xs">标尺</Text>
               </Menu.Item>
               <Menu.Item
                 leftSection={<BsCheck2 opacity={gesturesEnabled ? 100 : 0} />}
@@ -176,7 +176,7 @@ export const OptionsMenu = () => {
                   gaEvent("toggle_gestures", { label: gesturesEnabled ? "on" : "off" });
                 }}
               >
-                <Text size="xs">Trackpad Gestures</Text>
+                <Text size="xs">触控板手势</Text>
               </Menu.Item>
               <Menu.Item
                 leftSection={<BsCheck2 opacity={childrenCountVisible ? 100 : 0} />}
@@ -185,7 +185,7 @@ export const OptionsMenu = () => {
                   gaEvent("toggle_children_count", { label: childrenCountVisible ? "on" : "off" });
                 }}
               >
-                <Text size="xs">Item Count</Text>
+                <Text size="xs">项目数</Text>
               </Menu.Item>
               <Menu.Item
                 leftSection={<BsCheck2 opacity={imagePreviewEnabled ? 100 : 0} />}
@@ -194,7 +194,7 @@ export const OptionsMenu = () => {
                   gaEvent("toggle_image_preview", { label: imagePreviewEnabled ? "on" : "off" });
                 }}
               >
-                <Text size="xs">Image Link Preview</Text>
+                <Text size="xs">图片链接预览</Text>
               </Menu.Item>
               <Menu.Item
                 leftSection={<BsCheck2 opacity={collapseButtonVisible ? 100 : 0} />}
@@ -205,7 +205,7 @@ export const OptionsMenu = () => {
                   });
                 }}
               >
-                <Text size="xs">Show Expand/Collapse</Text>
+                <Text size="xs">显示展开/折叠</Text>
               </Menu.Item>
             </Menu.Dropdown>
           </Menu>
