@@ -1,15 +1,7 @@
 import React, { useEffect } from "react";
-import localFont from "next/font/local";
 import Link from "next/link";
 import { Image } from "@mantine/core";
 import styled from "styled-components";
-
-const monaSans = localFont({
-  src: "../assets/fonts/Mona-Sans.woff2",
-  variable: "--mona-sans",
-  display: "swap",
-  fallback: ["Futura, Helvetica, sans-serif", "Tahoma, Verdana, sans-serif"],
-});
 
 const StyledLogoWrapper = styled.div`
   display: flex;
@@ -20,7 +12,6 @@ const StyledLogoWrapper = styled.div`
 const StyledTitle = styled.span<{ fontSize: string }>`
   font-weight: 800;
   margin: 0;
-  font-family: ${monaSans.style.fontFamily} !important;
   font-size: ${({ fontSize }) => fontSize};
   white-space: nowrap;
   z-index: 10;

@@ -7,6 +7,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
  */
 const config = {
   output: "export",
+  assetPrefix: "./",
   reactStrictMode: false,
   productionBrowserSourceMaps: true,
   compiler: {
