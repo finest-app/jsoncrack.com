@@ -1,7 +1,6 @@
 import React from "react";
 import type { ModalProps } from "@mantine/core";
-import { Stack, Modal, Button, Text, Anchor, Group, TextInput } from "@mantine/core";
-import { VscLinkExternal } from "react-icons/vsc";
+import { Stack, Modal, Button, Text, Group, TextInput } from "@mantine/core";
 import useJsonQuery from "../../../hooks/useJsonQuery";
 
 export const JQModal = ({ opened, onClose }: ModalProps) => {
@@ -13,15 +12,6 @@ export const JQModal = ({ opened, onClose }: ModalProps) => {
       <Stack>
         <Text fz="sm">
           jq 是一个轻量级且灵活的命令行 JSON 处理器。JSON Crack 使用简化版本的 jq，不支持所有功能。
-          <br />
-          <Anchor
-            fz="sm"
-            target="_blank"
-            href="https://jqlang.github.io/jq/manual/"
-            rel="noopener noreferrer"
-          >
-            阅读文档。 <VscLinkExternal />
-          </Anchor>
         </Text>
         <TextInput
           leftSection="jq"

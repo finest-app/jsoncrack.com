@@ -7,7 +7,6 @@
             "code": "JSON Crack",
             "explain": "JSON Crack 是一款强大的开源数据可视化工具，帮助开发者以直观的图形方式探索和理解 JSON、YAML、XML、CSV 等复杂数据。告别枯燥的文本浏览，用交互式图表解锁数据的真正价值。",
             "cmds": [
-                "JSON",
                 "JSON Crack"
             ]
         }

@@ -1,10 +1,9 @@
 import React from "react";
-import { Flex, Group, Select } from "@mantine/core";
+import { Group, Select } from "@mantine/core";
 import styled from "styled-components";
 import toast from "react-hot-toast";
 import { AiOutlineFullscreen } from "react-icons/ai";
 import { type FileFormat, formats } from "../../../enums/file.enum";
-import { JSONCrackLogo } from "../../../layout/JsonCrackLogo";
 import useFile from "../../../store/useFile";
 import { FileMenu } from "./FileMenu";
 import { ToolsMenu } from "./ToolsMenu";
@@ -47,11 +46,6 @@ export const Toolbar = () => {
   return (
     <StyledTools>
       <Group gap="xs" justify="left" w="100%" style={{ flexWrap: "nowrap" }}>
-        <StyledToolElement title="JSON Crack">
-          <Flex gap="xs" align="center" justify="center">
-            <JSONCrackLogo fontSize="0.8rem" hideLogo />
-          </Flex>
-        </StyledToolElement>
         <Select
           defaultValue="json"
           size="xs"

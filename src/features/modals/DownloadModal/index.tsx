@@ -72,7 +72,7 @@ export const DownloadModal = ({ opened, onClose }: ModalProps) => {
 
   const clipboardImage = async () => {
     try {
-      toast.loading("Copying to clipboard...", { id: "toastClipboard" });
+      toast.loading("正在复制到剪贴板...", { id: "toastClipboard" });
 
       const imageElement = document.querySelector("svg[id*='ref']") as HTMLElement;
 
@@ -89,10 +89,10 @@ export const DownloadModal = ({ opened, onClose }: ModalProps) => {
         }),
       ]);
 
-      toast.success("Copied to clipboard");
+      toast.success("已复制到剪贴板");
       gaEvent("clipboard_img");
     } catch (error) {
-      toast.error("Failed to copy to clipboard");
+      toast.error("复制到剪贴板失败");
     } finally {
       toast.dismiss("toastClipboard");
       onClose();
@@ -101,7 +101,7 @@ export const DownloadModal = ({ opened, onClose }: ModalProps) => {
 
   const exportAsImage = async () => {
     try {
-      toast.loading("Downloading...", { id: "toastDownload" });
+      toast.loading("正在下载...", { id: "toastDownload" });
 
       const imageElement = document.querySelector("svg[id*='ref']") as HTMLElement;
 
@@ -113,7 +113,7 @@ export const DownloadModal = ({ opened, onClose }: ModalProps) => {
       downloadURI(dataURI, `${fileDetails.filename}.${extension}`);
       gaEvent("download_img", { label: extension });
     } catch (error) {
-      toast.error("Failed to download image!");
+      toast.error("下载图片失败！");
     } finally {
       toast.dismiss("toastDownload");
       onClose();
@@ -124,9 +124,9 @@ export const DownloadModal = ({ opened, onClose }: ModalProps) => {
     setFileDetails({ ...fileDetails, [key]: value });
 
   return (
-    <Modal opened={opened} onClose={onClose} title="Download Image" centered>
+    <Modal opened={opened} onClose={onClose} title="下载图片" centered>
       <TextInput
-        label="File Name"
+        label="文件名"
         value={fileDetails.filename}
         onChange={e => updateDetails("filename", e.target.value)}
         mb="lg"
@@ -143,7 +143,7 @@ export const DownloadModal = ({ opened, onClose }: ModalProps) => {
         mb="lg"
       />
       <ColorInput
-        label="Background Color"
+        label="背景色"
         value={fileDetails.backgroundColor}
         onChange={color => updateDetails("backgroundColor", color)}
         withEyeDropper={false}
@@ -160,10 +160,10 @@ export const DownloadModal = ({ opened, onClose }: ModalProps) => {
       <Divider my="xs" />
       <Group justify="right">
         <Button leftSection={<FiCopy />} onClick={clipboardImage}>
-          Clipboard
+          剪贴板
         </Button>
         <Button color="green" leftSection={<FiDownload />} onClick={exportAsImage}>
-          Download
+          下载
         </Button>
       </Group>
     </Modal>

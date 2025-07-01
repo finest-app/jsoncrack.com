@@ -1,10 +1,9 @@
 import React from "react";
 import type { ModalProps } from "@mantine/core";
-import { Stack, Modal, Button, Text, Anchor, Group, TextInput } from "@mantine/core";
+import { Stack, Modal, Button, Text, Group, TextInput } from "@mantine/core";
 import { JSONPath } from "jsonpath-plus";
 import { event as gaEvent } from "nextjs-google-analytics";
 import toast from "react-hot-toast";
-import { VscLinkExternal } from "react-icons/vsc";
 import useFile from "../../../store/useFile";
 import useJson from "../../../store/useJson";
 
@@ -32,15 +31,6 @@ export const JPathModal = ({ opened, onClose }: ModalProps) => {
         <Text fz="sm">
           JsonPath 表达式总是以与 XPath 表达式结合 XML 文档相同的方式引用 JSON 结构。 JsonPath
           中的“根成员对象”始终称为 $，无论它是对象还是数组。
-          <br />
-          <Anchor
-            fz="sm"
-            target="_blank"
-            href="https://docs.oracle.com/cd/E60058_01/PDF/8.0.8.x/8.0.8.0.0/PMF_HTML/JsonPath_Expressions.htm"
-            rel="noopener noreferrer"
-          >
-            阅读文档 <VscLinkExternal />
-          </Anchor>
         </Text>
         <TextInput
           value={query}
