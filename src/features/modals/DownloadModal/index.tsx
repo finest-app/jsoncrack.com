@@ -83,11 +83,17 @@ export const DownloadModal = ({ opened, onClose }: ModalProps) => {
 
       if (!blob) return;
 
-      navigator.clipboard?.write([
-        new ClipboardItem({
-          [blob.type]: blob,
-        }),
-      ]);
+      if (window.preload) {
+        const unit8Array = new Uint8Array(await blob.arrayBuffer());
+
+        window.utools.copyImage(unit8Array);
+      } else {
+        navigator.clipboard?.write([
+          new ClipboardItem({
+            [blob.type]: blob,
+          }),
+        ]);
+      }
 
       toast.success("已复制到剪贴板");
       gaEvent("clipboard_img");
@@ -109,6 +115,12 @@ export const DownloadModal = ({ opened, onClose }: ModalProps) => {
         quality: fileDetails.quality,
         backgroundColor: fileDetails.backgroundColor,
       });
+
+      if (window.preload) {
+        window.preload.downloadFile(dataURI, `${fileDetails.filename}.${extension}`);
+
+        return;
+      }
 
       downloadURI(dataURI, `${fileDetails.filename}.${extension}`);
       gaEvent("download_img", { label: extension });

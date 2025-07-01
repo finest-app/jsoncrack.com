@@ -183,6 +183,9 @@ importers:
       typescript:
         specifier: 5.8.2
         version: 5.8.2
+      utools-api-types:
+        specifier: ^7.2.0
+        version: 7.2.0
 
 packages:
 
@@ -2777,6 +2780,9 @@ packages:
     resolution: {integrity: sha512-Rb46I4cGGVBmjamjphe8L/UnvJD+uPPtTkNvX5mZgqdbavhI4EbgIWJiIHXJ8bc/i9EQGPRh4DwEURJ552Do0A==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
+  utools-api-types@7.2.0:
+    resolution: {integrity: sha512-hXj1NHhgFChp+wvfqL99AlNGDiJgDOXPUaKKnuxMqvz5D6J1IdBy6MUNti4cjmRyAKx407APsdg13MWU+xW1+Q==}
 
   v8-compile-cache-lib@3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}
@@ -5687,6 +5693,8 @@ snapshots:
   use-sync-external-store@1.5.0(react@18.3.1):
     dependencies:
       react: 18.3.1
+
+  utools-api-types@7.2.0: {}
 
   v8-compile-cache-lib@3.0.1: {}
 

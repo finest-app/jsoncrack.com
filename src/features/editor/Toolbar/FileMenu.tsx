@@ -15,6 +15,12 @@ export const FileMenu = () => {
     const a = document.createElement("a");
     const file = new Blob([getContents()], { type: "text/plain" });
 
+    if (window.preload) {
+      window.preload.downloadFile(file, `jsoncrack.${getFormat()}`);
+
+      return;
+    }
+
     a.href = window.URL.createObjectURL(file);
     a.download = `jsoncrack.${getFormat()}`;
     a.click();

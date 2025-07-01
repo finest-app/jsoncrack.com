@@ -15,7 +15,7 @@
     "jsx": "preserve",
     "incremental": true,
     "noImplicitAny": false,
-    "typeRoots": ["types"]
+    "types": ["utools-api-types"]
   },
   "include": ["src", "next-env.d.ts",],
   "exclude": ["node_modules"]
