@@ -20,15 +20,15 @@ const http = require("node:http");
 function openFile(options) {
   return new Promise((resolve, reject) => {
     const paths = utools.showOpenDialog(options);
-    const path = paths[0];
-    if (path) {
-      fs.readFile(path, (err, data) => {
+    const filePath = paths[0];
+    if (filePath) {
+      fs.readFile(filePath, (err, data) => {
         if (err) {
           reject(err);
           return;
         }
         const blob = new Blob([data], { type: "application/octet-stream" });
-        resolve(new File([blob], path.basename(path)));
+        resolve(new File([blob], path.basename(filePath)));
       });
     }
   });

@@ -46,6 +46,8 @@ export const ImportModal = ({ opened, onClose }: ModalProps) => {
     }
   };
 
+  const isUtools = typeof window !== "undefined" && window.preload;
+
   return (
     <Modal
       title="导入文件"
@@ -67,6 +69,21 @@ export const ImportModal = ({ opened, onClose }: ModalProps) => {
         />
         <Paper radius="md" style={{ cursor: "pointer" }}>
           <Dropzone
+            activateOnClick={!isUtools}
+            onClick={
+              isUtools
+                ? async () => {
+                    const file = await window.preload.openFile({
+                      filters: [
+                        { name: "JSON 文件", extensions: ["json", "yaml", "csv", "xml", "toml"] },
+                      ],
+                      properties: ["openFile"],
+                    });
+
+                    setFile(file);
+                  }
+                : undefined
+            }
             onDrop={files => setFile(files[0])}
             onReject={files => toast.error(`无法加载文件 ${files[0].file.name}`)}
             maxSize={500 * 1024}
