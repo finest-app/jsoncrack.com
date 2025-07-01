@@ -13,8 +13,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "postbuild": "next-sitemap --config next-sitemap.config.js",
+    "build": "next build && node ./scripts/replaceStaticPaths.js",
     "start": "next start",
     "lint": "tsc --project tsconfig.json && eslint src && prettier --check src",
     "lint:fix": "eslint --fix src & prettier --write src",
@@ -58,6 +57,7 @@
     "react-text-transition": "^3.1.0",
     "react-zoomable-ui": "^0.11.0",
     "reaflow": "5.4.1",
+    "replace-in-file": "^8.3.0",
     "styled-components": "^6.1.18",
     "toml": "^3.0.0",
     "use-long-press": "^3.3.0",
