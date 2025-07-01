@@ -5,7 +5,7 @@ import { LuShieldCheck } from "react-icons/lu";
 export const SecureInfo = () => {
   return (
     <Tooltip
-      label="Your data is processed locally on your device."
+      label="您的数据会在本地设备上进行处理。"
       fz="xs"
       ta="center"
       maw="200"
