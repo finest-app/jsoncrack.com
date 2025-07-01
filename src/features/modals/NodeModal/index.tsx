@@ -19,18 +19,18 @@ export const NodeModal = ({ opened, onClose }: ModalProps) => {
   const path = useGraph(state => state.selectedNode?.path || "");
 
   return (
-    <Modal title="Node Content" size="auto" opened={opened} onClose={onClose} centered>
+    <Modal title="节点内容" size="auto" opened={opened} onClose={onClose} centered>
       <Stack py="sm" gap="sm">
         <Stack gap="xs">
           <Text fz="xs" fw={500}>
-            Content
+            内容
           </Text>
           <ScrollArea.Autosize mah={250} maw={600}>
             <CodeHighlight code={nodeData} miw={350} maw={600} language="json" withCopyButton />
           </ScrollArea.Autosize>
         </Stack>
         <Text fz="xs" fw={500}>
-          JSON Path
+          JSON 路径
         </Text>
         <ScrollArea.Autosize maw={600}>
           <CodeHighlight
@@ -38,8 +38,8 @@ export const NodeModal = ({ opened, onClose }: ModalProps) => {
             miw={350}
             mah={250}
             language="json"
-            copyLabel="Copy to clipboard"
-            copiedLabel="Copied to clipboard"
+            copyLabel="复制到剪贴板"
+            copiedLabel="已复制到剪贴板"
             withCopyButton
           />
         </ScrollArea.Autosize>
