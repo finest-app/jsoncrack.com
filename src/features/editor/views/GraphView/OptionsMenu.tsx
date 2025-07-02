@@ -2,7 +2,6 @@ import React from "react";
 import { ActionIcon, Button, Flex, Menu, Text } from "@mantine/core";
 import { useHotkeys } from "@mantine/hooks";
 import styled from "styled-components";
-import { event as gaEvent } from "nextjs-google-analytics";
 import { BsCheck2 } from "react-icons/bs";
 import { LuChevronRight, LuImageDown, LuMenu } from "react-icons/lu";
 import { TiFlowMerge } from "react-icons/ti";
@@ -117,7 +116,6 @@ export const OptionsMenu = () => {
             fz={12}
             onClick={() => {
               toggleDirection();
-              gaEvent("rotate_layout", { label: direction });
             }}
             leftSection={<StyledFlowIcon rotate={rotateLayout(direction || "RIGHT")} />}
             rightSection={
@@ -133,7 +131,6 @@ export const OptionsMenu = () => {
             fz={12}
             onClick={() => {
               toggleExpandCollapseGraph();
-              gaEvent("expand_collapse_graph", { label: graphCollapsed ? "expand" : "collapse" });
             }}
             leftSection={graphCollapsed ? <VscExpandAll /> : <VscCollapseAll />}
             rightSection={
@@ -164,7 +161,6 @@ export const OptionsMenu = () => {
                 leftSection={<BsCheck2 opacity={rulersEnabled ? 100 : 0} />}
                 onClick={() => {
                   toggleRulers(!rulersEnabled);
-                  gaEvent("toggle_rulers", { label: rulersEnabled ? "on" : "off" });
                 }}
               >
                 <Text size="xs">标尺</Text>
@@ -173,7 +169,6 @@ export const OptionsMenu = () => {
                 leftSection={<BsCheck2 opacity={gesturesEnabled ? 100 : 0} />}
                 onClick={() => {
                   toggleGestures(!gesturesEnabled);
-                  gaEvent("toggle_gestures", { label: gesturesEnabled ? "on" : "off" });
                 }}
               >
                 <Text size="xs">触控板手势</Text>
@@ -182,7 +177,6 @@ export const OptionsMenu = () => {
                 leftSection={<BsCheck2 opacity={childrenCountVisible ? 100 : 0} />}
                 onClick={() => {
                   toggleChildrenCount(!childrenCountVisible);
-                  gaEvent("toggle_children_count", { label: childrenCountVisible ? "on" : "off" });
                 }}
               >
                 <Text size="xs">项目数</Text>
@@ -191,7 +185,6 @@ export const OptionsMenu = () => {
                 leftSection={<BsCheck2 opacity={imagePreviewEnabled ? 100 : 0} />}
                 onClick={() => {
                   toggleImagePreview(!imagePreviewEnabled);
-                  gaEvent("toggle_image_preview", { label: imagePreviewEnabled ? "on" : "off" });
                 }}
               >
                 <Text size="xs">图片链接预览</Text>
@@ -200,9 +193,6 @@ export const OptionsMenu = () => {
                 leftSection={<BsCheck2 opacity={collapseButtonVisible ? 100 : 0} />}
                 onClick={() => {
                   toggleCollapseButton(!collapseButtonVisible);
-                  gaEvent("toggle_expand_collapse", {
-                    label: collapseButtonVisible ? "on" : "off",
-                  });
                 }}
               >
                 <Text size="xs">显示展开/折叠</Text>

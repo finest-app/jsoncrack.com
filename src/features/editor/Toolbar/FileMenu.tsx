@@ -1,6 +1,5 @@
 import React from "react";
 import { Flex, Menu } from "@mantine/core";
-import { event as gaEvent } from "nextjs-google-analytics";
 import { CgChevronDown } from "react-icons/cg";
 import useFile from "../../../store/useFile";
 import { useModal } from "../../../store/useModal";
@@ -24,8 +23,6 @@ export const FileMenu = () => {
     a.href = window.URL.createObjectURL(file);
     a.download = `jsoncrack.${getFormat()}`;
     a.click();
-
-    gaEvent("save_file", { label: getFormat() });
   };
 
   return (

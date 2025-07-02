@@ -4,7 +4,6 @@ import { createTheme, MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
 import "@mantine/code-highlight/styles.css";
 import { ThemeProvider } from "styled-components";
-import { GoogleAnalytics } from "nextjs-google-analytics";
 import { Toaster } from "react-hot-toast";
 import GlobalStyle from "../constants/globalStyle";
 import { lightTheme } from "../constants/theme";
@@ -68,7 +67,6 @@ function JsonCrack({ Component, pageProps }: AppProps) {
           }}
         />
         <GlobalStyle />
-        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && <GoogleAnalytics trackPageViews />}
         <Component {...pageProps} />
       </ThemeProvider>
     </MantineProvider>
